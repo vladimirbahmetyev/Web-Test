@@ -84,7 +84,7 @@ export default function Edit(props) {
                 password: password,
                 is_active: "true"
             }
-        fetch("http://emphasoft-test-assignment.herokuapp.com/api/v1/users/", {
+        fetch("https://emphasoft-test-assignment.herokuapp.com/api/v1/users/", {
             method: "POST",
             credentials: 'same-origin',
             headers:{
@@ -116,7 +116,7 @@ export default function Edit(props) {
                 password: password,
                 is_active: "true"
             }
-            fetch(`http://emphasoft-test-assignment.herokuapp.com/api/v1/users/${patchedUserId}/`, {
+            fetch(`https://emphasoft-test-assignment.herokuapp.com/api/v1/users/${patchedUserId}/`, {
                 method: "PATCH",
                 credentials: 'same-origin',
                 headers:{
@@ -145,7 +145,7 @@ export default function Edit(props) {
                 password: deleteUser.password,
                 is_active: "false"
             }
-            fetch(`http://emphasoft-test-assignment.herokuapp.com/api/v1/users/${deleteUserId}/`, {
+            fetch(`https://emphasoft-test-assignment.herokuapp.com/api/v1/users/${deleteUserId}/`, {
                 method: "PATCH",
                 credentials: 'same-origin',
                 headers:{

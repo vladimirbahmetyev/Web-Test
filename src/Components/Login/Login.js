@@ -14,7 +14,7 @@ export default function Login(props) {
             alert("Логин или пароль не могут быть пустыми")
             return
         }
-        fetch("http://emphasoft-test-assignment.herokuapp.com/api-token-auth/",{
+        fetch("https://emphasoft-test-assignment.herokuapp.com/api-token-auth/",{
             method: "POST",
             credentials: 'same-origin',
             headers: {

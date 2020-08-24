@@ -44,7 +44,7 @@ function App() {
   }
 
   const loadUserList = (key = ApiKey) =>{
-    fetch("http://emphasoft-test-assignment.herokuapp.com/api/v1/users/",{
+    fetch("https://emphasoft-test-assignment.herokuapp.com/api/v1/users/",{
       headers:{
         'Authorization': `Token ${key}`
       }
