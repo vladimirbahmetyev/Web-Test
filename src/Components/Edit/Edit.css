@@ -1,0 +1,95 @@
+.active_button {
+  -webkit-box-shadow: 0 0 5px green;
+          box-shadow: 0 0 5px green;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+}
+
+.edit {
+  width: 800px;
+  margin: 100px auto;
+  -webkit-box-shadow: 0 0 4px black;
+          box-shadow: 0 0 4px black;
+  padding: 10px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .edit {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.edit__nav-panel {
+  width: 60%;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 601px) {
+  .edit__nav-panel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .edit__nav-panel {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.edit__form {
+  width: 90%;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+  .edit__form {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .edit__button {
+    height: 40px;
+  }
+}
+
+@media only screen and (min-width: 801px) {
+  .edit__button:hover {
+    -webkit-box-shadow: 0 0 8px red;
+            box-shadow: 0 0 8px red;
+    -webkit-transition-duration: 200ms;
+            transition-duration: 200ms;
+  }
+}
+/*# sourceMappingURL=Edit.css.map */

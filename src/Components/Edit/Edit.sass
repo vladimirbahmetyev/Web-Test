@@ -1,0 +1,45 @@
+.active_button
+    box-shadow: 0 0 5px green
+    transition-duration: 200ms
+.edit
+    width: 800px
+    margin: 100px auto
+    box-shadow: 0 0 4px black
+    padding: 10px
+    border-radius: 5px
+    display: flex
+    flex-direction: column
+    align-items: center
+    @media only screen and ( max-width: 800px )
+        box-shadow: none
+        padding: 0
+        width: 100%
+        margin-top: 20px
+        
+
+.edit__nav-panel
+    width: 60%
+    margin-top: 20px
+    @media only screen and ( max-width: 1023px ) and (min-width: 601px)
+        display: flex
+        justify-content: space-between
+        width: 80%
+    @media only screen and ( max-width: 600px )
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+
+.edit__form
+    width: 90%
+    margin-top: 20px
+    @media only screen and ( max-width: 800px )
+        width: 100%
+
+.edit__button
+    @media only screen and ( max-width: 800px )
+        height: 40px            
+    &:hover
+        @media only screen and ( min-width: 801px )
+            box-shadow: 0 0 8px red
+            transition-duration: 200ms

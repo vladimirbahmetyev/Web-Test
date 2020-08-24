@@ -1,0 +1,42 @@
+.input__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input {
+  padding: 10px;
+}
+
+.input__pure-input {
+  margin-left: 10%;
+  margin-right: 5%;
+  width: 60%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 4px gray;
+          box-shadow: 0 0 4px gray;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  padding: 10px 15px;
+}
+
+.input__pure-input:focus {
+  -webkit-box-shadow: 0 0 4px blue;
+          box-shadow: 0 0 4px blue;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.input__text {
+  text-align: right;
+  width: 40%;
+}
+/*# sourceMappingURL=Input.css.map */

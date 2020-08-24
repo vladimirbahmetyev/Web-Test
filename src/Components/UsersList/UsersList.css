@@ -1,0 +1,108 @@
+.users-list {
+  width: 1025px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px black;
+          box-shadow: 0 0 5px black;
+  margin: 30px auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .users-list {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .users-list {
+    width: 100%;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+.users-list__container {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.show-option__containter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  .show-option__containter {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+.option__container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  .option__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+.show-option__sort {
+  margin: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .show-option__sort {
+    margin: 10px;
+  }
+}
+
+.users-list__item {
+  margin: 0;
+  padding: 0 150px;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .users-list__item {
+    -webkit-box-shadow: 0 3px 6px gray;
+            box-shadow: 0 3px 6px gray;
+    padding: 10px 25px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .users-list__item {
+    -webkit-box-shadow: 0 3px 6px gray;
+            box-shadow: 0 3px 6px gray;
+    padding: 10px;
+  }
+}
+/*# sourceMappingURL=UsersList.css.map */

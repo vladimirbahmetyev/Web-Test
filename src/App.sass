@@ -1,0 +1,29 @@
+.app__carusel
+    transition-duration: 300ms
+    display: flex
+    width: 100%
+    >div
+        flex-shrink: 0
+        margin: 0 auto
+.shift
+    transform: translateX(-100vw)
+    transition-duration: 300ms
+.app__carusel__item
+    width: 100%
+.app__task-nav
+    width: 900px
+    margin: 20px auto
+    display: flex
+    justify-content: center
+    >button
+        margin: 0 auto
+    @media only screen and ( max-width: 899px  )
+        width: 100%
+    @media only screen and ( max-width: 599px  )
+        flex-direction: column
+        height: 120px
+        justify-content: space-around
+.app__task-container
+    overflow: hidden
+    width: 100%
+        
