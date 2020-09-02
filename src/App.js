@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import Login from "./Components/Login/Login"
 import UserList from "./Components/UsersList/UsersList"
 import Edit from "./Components/Edit/Edit"
@@ -10,6 +10,34 @@ function App() {
   const [ApiKey, setApiKey] = useState("");
   const [userList, setUserList] = useState([])
   const [currentTask, setCurrentTask] = useState("first")
+  const [isAuthorized, setIsAuthorized] = useState(false);
+
+  const loadUserList = useCallback(
+    async(key = ApiKey) =>{
+      const data = await fetch("https://emphasoft-test-assignment.herokuapp.com/api/v1/users/",{
+      headers:{
+        'Authorization': `Token ${key}`
+      }
+    })
+    let userList = []
+    if( data.status === 200){
+      userList = await data.json()
+    }
+    else{
+      console.log(`Error: ${data.status}`)
+    }
+    setUserList(userList)
+  },[ApiKey]
+  )
+  
+  useEffect(() => {
+    let key = getCookie("key")
+    if(key){
+      setApiKey(key)
+      loadUserList(key)
+      setIsAuthorized(true)
+    }  
+  }, [loadUserList]);
 
   const clickTaskHandler = (e) =>{
     let clickedTask = e.target.value
@@ -38,35 +66,28 @@ function App() {
     setCurrentTask(clickedTask)
 }
 
-  const onGetKey = (key)=>{
+  const setKeyCookie = (key) =>{
+      document.cookie = `key=${key}`
+  }
+
+  const getCookie = (name)=>{
+    let matches = document.cookie.match(new RegExp(
+      "(?:^|; )" + name.replace(/([.$?*|{}()[]\/+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }
+
+
+  const installApiKey = (key)=>{
+    setIsAuthorized(true)
+    setApiKey(key)   
+    setKeyCookie(key)  
     loadUserList(key)
-    setApiKey(key)     
   }
-
-  const loadUserList = (key = ApiKey) =>{
-    fetch("https://emphasoft-test-assignment.herokuapp.com/api/v1/users/",{
-      headers:{
-        'Authorization': `Token ${key}`
-      }
-    })
-    .then(response => {
-      if( response.status === 200){
-        return response.json()
-      }
-      else{
-        console.log(`Error: ${response.status}`)
-      }
-    })
-    .then(userList => {
-      console.log("Подгружаю список")
-      setUserList(userList) 
-    })
-  }
-
   return (
     <div className="App">
-      {userList.length === 0?
-      <Login setKey={onGetKey}/>
+      {!isAuthorized?
+      <Login setKey={installApiKey}/>
       :
       <div className="app__task-container">
           <div className="app__task-nav" onClick={clickTaskHandler}>

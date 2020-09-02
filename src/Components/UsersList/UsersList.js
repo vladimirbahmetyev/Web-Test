@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import UserItem from "../UserItem/UserItem"
 import "./UsersList.css"
 import Input from "../Input/Input"
@@ -9,18 +9,7 @@ export default function UsersList(props) {
     const [curFilter, setFilter] = useState("");
     const [curSort, setSort] = useState("none")
 
-    let handleSortChange = (e) =>{
-        let sortType = e.target.value
-        setSort(sortType)
-        changeList(sortType, curFilter)
-    }
-
-    let handleFilterChange = (curFilter) =>{
-        setFilter(curFilter)
-        changeList(curSort, curFilter)
-    }
-
-    let changeList = (curSort, curFilter)=>{
+    useEffect(() => {
         let tempList = []
         Object.assign(tempList, user_list)
         if(curFilter.length !== 0){
@@ -36,6 +25,16 @@ export default function UsersList(props) {
             tempList = tempList.sort((first,second) => first.id < second.id? 1 : -1)
         }
         setList(tempList)
+
+    }, [user_list, curSort, curFilter]);
+
+    let handleSortChange = (e) =>{
+        let sortType = e.target.value
+        setSort(sortType)
+    }
+
+    let handleFilterChange = (curFilter) =>{
+        setFilter(curFilter)
     }
 
     return(
